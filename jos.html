@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Perpisahan - Foto Frame</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Indie+Flower&family=Kalam:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-wood: #d1ccc0;
+            --paper: #fffef0;
+            --ink: #1e3799;
+            --line-color: #e1e1e1;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: var(--bg-wood);
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Kalam', cursive;
+        }
+
+        .notebook {
+            width: 100%;
+            max-width: 950px;
+            background: var(--paper);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .notebook::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.05), rgba(0,0,0,0.1));
+            z-index: 10;
+            transform: translateX(-50%);
+        }
+
+        .page { padding: 40px; position: relative; }
+
+        .page-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+
+        /* BINGKAI POLAROID */
+        .polaroid-frame {
+            background: white;
+            padding: 15px 15px 50px 15px; /* Spasi bawah untuk tulisan */
+            box-shadow: 5px 10px 20px rgba(0,0,0,0.15);
+            transform: rotate(-3deg);
+            width: 280px; /* Ukuran lebar bingkai tetap */
+            height: auto;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 20;
+        }
+
+        /* TEMPAT FOTO (DIBUAT KOTAK) */
+        .image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Menjamin bentuk kotak sempurna */
+            overflow: hidden;
+            background: #333;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* INI PENTING: Foto menyesuaikan bingkai tanpa gepeng */
+            object-position: center;
+        }
+
+        .polaroid-caption {
+            margin-top: 15px;
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.3rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .page-right {
+            padding-top: 60px;
+            background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+            background-size: 100% 30px;
+        }
+
+        h2 { font-family: 'Gochi Hand', cursive; margin: 0 0 30px 0; font-size: 2rem; color: #333; }
+        p { margin: 0; line-height: 30px; color: var(--ink); font-size: 1.15rem; }
+
+        .sticky-note {
+            position: absolute; top: 20px; right: 20px;
+            background: #fff94f; padding: 8px; width: 100px;
+            transform: rotate(7deg); box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+            font-size: 0.8rem; text-align: center; z-index: 15;
+        }
+
+        .signature {
+            margin-top: 50px; text-align: right;
+            font-family: 'Indie Flower', cursive; font-size: 1.6rem; color: #d63031;
+        }
+
+        @media (max-width: 768px) {
+            .notebook { grid-template-columns: 1fr; max-width: 450px; }
+            .notebook::before { display: none; }
+            .page-left { border-right: none; border-bottom: 2px dashed #ccc; padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notebook">
+        <div class="page page-left">
+            <div class="polaroid-frame">
+                <div class="image-container">
+                    <img src="https://i.ibb.co.com/H3Y49fp/Whats-App-Image-2026-02-27-at-16-22-07.jpg"></a>" alt="Kenangan" 
+                         onerror="this.src='https://via.placeholder.com/300?text=Ganti+Link+Foto+Disini'">
+                </div>
+                <div class="polaroid-caption">i hope you'll comeback</div>
+            </div>
+            <p style="margin-top: 25px; font-style: italic; opacity: 0.5; color: #000; font-size: 0.9rem;">"Every photo tells a story..."</p>
+        </div>
+
+        <div class="page page-right">
+            <div class="sticky-note">Kabar-kabari ya! 📱</div>
+            <h2>Halo Kaa Kenan,</h2>
+            <p>apa kabar ka? aku harap baik yaa. sampe detik ini aku belum bisa nerima apa yang terjadi, tapi ya mau gimana lagi.</p>
+            <p>makasih buat 6 bulannya ka, banyak banget ilmu yang ka kenan kasih ke aku. jujur aja aku kagum ke ka kenan.</p>
+            <p>ka kenan semangat terus ya ka, aku tau ini berat. tapi ka kenan keren, berani berbuat berani bertanggungjawab.</p>
+            <p>di sini kita semua nungguin ka kenan balik lagi, kita berdoa ka kenan secepatnya diaktifin lagi ya kaaa.</p>
+            
+            <div class="signature">
+                Salam hangat, <br>
+                SATGAMA 25/26
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
